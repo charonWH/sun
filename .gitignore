@@ -67,6 +67,3 @@ captures/
 
 #GoogleServices(e.g.APIsorFirebase)
 google-services.json
-#app/.gitignore
-app/libs/
-app/src/main/res/drawable/
