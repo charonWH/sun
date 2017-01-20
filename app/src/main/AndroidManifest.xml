@@ -11,11 +11,25 @@
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="WTF.Home"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AActivity"></activity>
+        <activity android:name=".AActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="WTF.A"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CActivity">
+            <intent-filter>
+                <action android:name="WTF.C"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="WTF.C"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

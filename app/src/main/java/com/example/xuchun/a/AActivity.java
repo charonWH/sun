@@ -1,6 +1,7 @@
 package com.example.xuchun.a;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +17,7 @@ public class AActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
-        Toast.makeText(this, "U R now in AActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "U R now in A Activity", Toast.LENGTH_SHORT).show();
 
         button_1 = (Button) findViewById(R.id.button_1);
         buttonOnClick();
@@ -27,11 +28,12 @@ public class AActivity extends AppCompatActivity {
         button_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View V){
-                Log.d(TAG, "onClick Second: click button");
-                Toast.makeText(AActivity.this,"shit A",Toast.LENGTH_SHORT).show();
-                Intent intentToHomeActivity = new Intent(AActivity.this, HomeActivity.class);
-                startActivity(intentToHomeActivity);
-//                finish();
+                Log.d(TAG, "button_1, A Activity");
+//                Toast.makeText(AActivity.this,"button_1, C Activity",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent("WTF.C");
+                intent.addCategory("WTF.C");
+                startActivity(intent);
+                finish();
             }
         });
     }
