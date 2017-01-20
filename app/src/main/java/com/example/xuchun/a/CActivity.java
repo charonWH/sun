@@ -9,11 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class CActivity extends AppCompatActivity {
 
-    Button button_1,button_2;
+    Button button_1,button_2,button_3;
+    EditText edtext;
 
     private static final String TAG="ActivityWH";
 
@@ -32,12 +34,14 @@ public class CActivity extends AppCompatActivity {
     private void initView(){
         button_1= (Button) findViewById(R.id.button_1);
         button_2= (Button) findViewById(R.id.button_2);
+        button_3= (Button) findViewById(R.id.button_3);
+        edtext=(EditText) findViewById(R.id.edtext);
     }
 
     private void Getdata(){
         Intent intent = getIntent();
         String data = intent.getStringExtra("HometC");
-        Toast.makeText(this, "Data recived from Home:\n"+data, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Data received from Home:\n"+data, Toast.LENGTH_SHORT).show();
     }
 
     // Button
@@ -58,6 +62,14 @@ public class CActivity extends AppCompatActivity {
                 Intent intent=new Intent("android.intent.action.VIEW");
                 intent.setData(Uri.parse("http://www.baidu.com"));
                 startActivity(intent);
+            }
+        });
+        button_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "button_3, C Activity");
+                String text=edtext.getText().toString();
+                Toast.makeText(CActivity.this,text,Toast.LENGTH_SHORT).show();
             }
         });
     }

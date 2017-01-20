@@ -16,16 +16,17 @@ import static android.R.id.switch_widget;
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "ActivityWH";
-    Button button_1,button_2;
+    Button button_1,button_2,button_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Log.d(TAG, "onCreate: run");
+        Log.d(TAG, "onCreate: home!");
 
         button_1 = (Button) findViewById(R.id.button_1);
         button_2 = (Button) findViewById(R.id.button_2);
+        button_3 = (Button) findViewById(R.id.button_3);
         buttonOnClick();
 
     }
@@ -50,11 +51,58 @@ public class HomeActivity extends AppCompatActivity {
                 String data = "Transfer data from Home to C";   // Trans data
                 intent.putExtra("HometC",data);                 // Trans data
                 startActivity(intent);
-                finish();
+//                finish();
+            }
+        });
+        button_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View V){
+                Log.d(TAG, "button_3, Home Activity");
+                Intent intent = new Intent(HomeActivity.this, DActivity.class);
+                startActivity(intent);
+//                finish();
             }
         });
     }
 
+
+    // life cycle test
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: home!");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: home!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: home!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: home!");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: home!");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: home!");
+    }
+    // life cycle test over
 
     // Menu
     @Override
