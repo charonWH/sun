@@ -1,20 +1,10 @@
 #################
 ## AS
 #################
-*.iml
-.gradle
-#editedbyWH
-.idea
-#/.idea/workspace.xml
-#/.idea/libraries
-#editedbyWHover
-/local.properties
+
 .DS_Store
-/build
 /captures
 .externalNativeBuild
-*.apk#optional
-
 
 #以下来自：https://github.com/github/gitignore/blob/master/Android.gitignore
 #WH添加
@@ -53,11 +43,8 @@ proguard/
 captures/
 
 #Intellij
-#*.iml
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/libraries
+*.iml
+.idea
 
 #Keystorefiles
 *.jks
