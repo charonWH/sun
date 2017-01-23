@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import static android.R.id.button1;
-import static android.R.id.switch_widget;
-
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = "ActivityWH";
